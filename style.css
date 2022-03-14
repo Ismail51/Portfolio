@@ -75,5 +75,35 @@ cursor: pointer;
   margin: 20px 0;
   width: 150px;
   height: 150px;
-  
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 26px 26px 53px #292929,
+              -26px -26px 53px;
+}
+
+.cercle-portrait img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.logo-cercle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 40px;
+  cursor: pointer;
+}
+
+.logo-cercle img {
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
