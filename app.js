@@ -9,7 +9,7 @@ btnMenu.addEventListener("click", () => {
 
 });
 
-if(window.matchMedia('(max-width: 1300px)')) {
+if (window.matchMedia('(max-width: 1300px)')) {
   allItemNav.forEach(item => {
     item.addEventListener('click', () => {
       nav.classList.toggle('menu-visible')
@@ -19,48 +19,48 @@ if(window.matchMedia('(max-width: 1300px)')) {
 }
 
 // Animation écriture
- const txtAnim = document.querySelector('.txt-animation');
- 
- let typewriter = new Typewriter(txtAnim, {
-   loop: false,
-   deletespeed: 20 
- })
+const txtAnim = document.querySelector('.txt-animation');
 
- typewriter 
- .pauseFor(1800)
- .changeDelay(20)
- .typeString('Moi c\'est Ismail Bouzekri')
- .pauseFor(300)
- .typeString('<strong>, Développeur Web !</strong>')
- .pauseFor(1000)
- .deleteChars(5)
- .typeString('<span style="color: #27ae60;"> <b>HTML/CSS</b></span> <b>!</b>')
- .pauseFor(1000)
- .deleteChars(10)
- .typeString('<span style="color: orange;"> <b>JavaScript</b></span> <b>!</b>')
- .pauseFor(1000)
- .deleteChars(13)
- .typeString('<span style="color: #7a4be7;"> <b>ReactJS</b></span> <b>!</b>')
- .start()
+let typewriter = new Typewriter(txtAnim, {
+  loop: false,
+  deletespeed: 20
+})
+
+typewriter
+  .pauseFor(1800)
+  .changeDelay(20)
+  .typeString('Moi c\'est Ismail Bouzekri')
+  .pauseFor(300)
+  .typeString('<strong>, Développeur Web !</strong>')
+  .pauseFor(1000)
+  .deleteChars(5)
+  .typeString('<span style="color: #27ae60;"> <b>ReactJS</b></span> <b>!</b>')
+  .pauseFor(1000)
+  .deleteChars(10)
+  .typeString('<span style="color: orange;"> <b>JavaScript</b></span> <b>!</b>')
+  .pauseFor(1000)
+  .deleteChars(13)
+  .typeString('<span style="color: #7a4be7;"> <b>Html/Css</b></span> <b>!</b>')
+  .start()
 
 //  Animation Contact 
 
 const input_fields = document.querySelectorAll('input');
 
-for(let i = 0; i < input_fields.length; i++) {
-    let field = input_fields[i];
+for (let i = 0; i < input_fields.length; i++) {
+  let field = input_fields[i];
 
-    field.addEventListener('input', (e) => {
-      if(e.target.value !==''){
-          e.target.parentNode.classList.add('animation')
-      } else if (e.target.value == ''){
-        e.target.parentNode.classList.remove('animation')
-      }
+  field.addEventListener('input', (e) => {
+    if (e.target.value !== '') {
+      e.target.parentNode.classList.add('animation')
+    } else if (e.target.value == '') {
+      e.target.parentNode.classList.remove('animation')
+    }
 
-    })
+  })
 
 }
- 
+
 // Anim GSAP + ScrollMagic
 
 const navbar = document.querySelector('.nav-gauche')
@@ -70,14 +70,14 @@ const btnMedias = document.querySelectorAll('.media')
 const btnRondAccueil = document.querySelector('.btn-rond')
 
 
-const TL1 = gsap.timeline({paused: true});
+const TL1 = gsap.timeline({ paused: true });
 
 TL1
-.to(navbar, {left: '0px', ease: Power3.easeOut, duration: 0.6})
-.from(titre, {y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4})
-.staggerFrom(btn, 1, {opacity: 0}, 0.2, '-=0.30')
-.staggerFrom(btnMedias, 1, {opacity: 0}, 0.2, '-=0.75')
-.from(btnRondAccueil, {y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4}, '-=1')
+  .to(navbar, { left: '0px', ease: Power3.easeOut, duration: 0.6 })
+  .from(titre, { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4 })
+  .staggerFrom(btn, 1, { opacity: 0 }, 0.2, '-=0.30')
+  .staggerFrom(btnMedias, 1, { opacity: 0 }, 0.2, '-=0.75')
+  .from(btnRondAccueil, { y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4 }, '-=1')
 
 window.addEventListener('load', () => {
   TL1.play();
@@ -93,9 +93,9 @@ const listePres = document.querySelectorAll('.item-liste')
 const tlpres = new TimelineMax();
 
 tlpres
-.from(titrePres, {y: -200, opacity: 0, duration: 0.6})
-.from(presGauche, {y: -20, opacity: 0, duration: 0.6}, '-=0.5')
-.staggerFrom(listePres, 1, {opacity: 0}, 0.2, '-=0.5')
+  .from(titrePres, { y: -200, opacity: 0, duration: 0.6 })
+  .from(presGauche, { y: -20, opacity: 0, duration: 0.6 }, '-=0.5')
+  .staggerFrom(listePres, 1, { opacity: 0 }, 0.2, '-=0.5')
 
 const controller = new ScrollMagic.Controller();
 
@@ -105,9 +105,9 @@ const scene = new ScrollMagic.Scene({
   reverse: false
 })
 
-.setTween(tlpres)
-// .addIndicators()
-.addTo(controller)
+  .setTween(tlpres)
+  // .addIndicators()
+  .addTo(controller)
 
 // Anim portfolio 
 
@@ -118,8 +118,8 @@ const itemPortfolio = document.querySelectorAll('.vague1')
 const tlPortfolio = new TimelineMax();
 
 tlPortfolio
-.from(titrePortfolio, {y: -50, opacity: 0, duration: 0.5})
-.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5')
+  .from(titrePortfolio, { y: -50, opacity: 0, duration: 0.5 })
+  .staggerFrom(itemPortfolio, 1, { opacity: 0 }, 0.2, '-=0.5')
 
 const scene2 = new ScrollMagic.Scene({
   triggerElement: portfolioContainer,
@@ -127,24 +127,24 @@ const scene2 = new ScrollMagic.Scene({
   reverse: false
 })
 
-.setTween(tlPortfolio)
-.addTo(controller)
+  .setTween(tlPortfolio)
+  .addTo(controller)
 
 const itemPortfolio2 = document.querySelectorAll('.vague2')
 
 const tlPortfolio2 = new TimelineMax();
 
 tlPortfolio2
-.staggerFrom(itemPortfolio2, 1, {opacity: 0}, 0.2, '-=0.5')
+  .staggerFrom(itemPortfolio2, 1, { opacity: 0 }, 0.2, '-=0.5')
 
 const scene3 = new ScrollMagic.Scene({
-    triggerElement: itemPortfolio,
-    triggerHook: 0.2,
-    reverse: false
+  triggerElement: itemPortfolio,
+  triggerHook: 0.2,
+  reverse: false
 })
-.setTween(tlPortfolio2)
-// .addIndicators()
-.addTo(controller)
+  .setTween(tlPortfolio2)
+  // .addIndicators()
+  .addTo(controller)
 
 
 // Vague 3
@@ -178,15 +178,15 @@ const allShadowBarres = document.querySelectorAll('.barre-grises')
 const tlCompetences = new TimelineMax();
 
 tlCompetences
-.from(titreComp, {opacity: 0, duration: 0.6})
-.staggerFrom(allLabel, 0.5, {y: -50, opacity:0}, 0.1, '-=0.5')
-.staggerFrom(allPourcent, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
-.staggerFrom(allShadowBarres, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
-.staggerFrom(allBarres, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
+  .from(titreComp, { opacity: 0, duration: 0.6 })
+  .staggerFrom(allLabel, 0.5, { y: -50, opacity: 0 }, 0.1, '-=0.5')
+  .staggerFrom(allPourcent, 0.5, { y: -10, opacity: 0 }, 0.1, '-=1')
+  .staggerFrom(allShadowBarres, 0.5, { y: -10, opacity: 0 }, 0.1, '-=1')
+  .staggerFrom(allBarres, 0.5, { y: -10, opacity: 0 }, 0.1, '-=1')
 
 const scene5 = new ScrollMagic.Scene({
-    triggerElement: sectionComp,
-    reverse: false
+  triggerElement: sectionComp,
+  reverse: false
 })
-.setTween(tlCompetences)
-.addTo(controller);
+  .setTween(tlCompetences)
+  .addTo(controller);
