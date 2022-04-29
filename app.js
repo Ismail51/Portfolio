@@ -190,3 +190,9 @@ const scene5 = new ScrollMagic.Scene({
 })
   .setTween(tlCompetences)
   .addTo(controller);
+
+
+setTimeout(() => {
+  document.getElementById('nom').value = ''
+  document.getElementById('txt').value = ''
+}, 50)
