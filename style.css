@@ -215,7 +215,7 @@ cursor: pointer;
   background-size: cover;
   background-position: right;
   height: 100vh;
-  min-height: 900px;
+  /* min-height: 900px; */
   width: calc(100% - 300px);
   margin-left: auto;
   position: relative;
